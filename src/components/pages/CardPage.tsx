@@ -2,10 +2,11 @@
 
 import { motion } from 'framer-motion';
 import Image from 'next/image';
-import ReactMarkdown from 'react-markdown';
+import ReactMarkdown, { defaultUrlTransform, type Components } from 'react-markdown';
 import { CardPageConfig } from '@/types/page';
+import { withBasePath } from '@/lib/sitePath';
 
-const markdownComponents = {
+const markdownComponents: Components = {
     p: ({ children }: React.ComponentProps<'p'>) => <p className="mb-3 last:mb-0">{children}</p>,
     ul: ({ children }: React.ComponentProps<'ul'>) => <ul className="list-disc list-inside mb-3 space-y-1">{children}</ul>,
     ol: ({ children }: React.ComponentProps<'ol'>) => <ol className="list-decimal list-inside mb-3 space-y-1">{children}</ol>,
@@ -13,8 +14,8 @@ const markdownComponents = {
     a: ({ ...props }) => (
         <a
             {...props}
-            target="_blank"
-            rel="noopener noreferrer"
+            target={props.href && /^(https?:)?\/\//i.test(props.href) ? '_blank' : undefined}
+            rel={props.href && /^(https?:)?\/\//i.test(props.href) ? 'noopener noreferrer' : undefined}
             className="text-accent font-medium transition-all duration-200 rounded hover:bg-accent/10 hover:shadow-sm"
         />
     ),
@@ -41,7 +42,7 @@ export default function CardPage({ config, embedded = false }: { config: CardPag
                 <h1 className={`${embedded ? "text-2xl" : "text-4xl"} font-serif font-bold text-primary mb-4`}>{config.title}</h1>
                 {config.description && (
                     <div className={`${embedded ? "text-base" : "text-lg"} text-neutral-600 dark:text-neutral-500 max-w-2xl leading-relaxed`}>
-                        <ReactMarkdown components={markdownComponents}>
+                        <ReactMarkdown components={markdownComponents} urlTransform={(url) => withBasePath(defaultUrlTransform(url))}>
                             {config.description}
                         </ReactMarkdown>
                     </div>
@@ -61,7 +62,7 @@ export default function CardPage({ config, embedded = false }: { config: CardPag
                             {item.image && (
                                 <div className="w-full md:w-64 md:flex-shrink-0 overflow-hidden rounded-lg border border-neutral-200 dark:border-neutral-800 bg-neutral-50 dark:bg-neutral-800">
                                     <Image
-                                        src={item.image}
+                                        src={withBasePath(item.image)}
                                         alt={item.title}
                                         width={960}
                                         height={540}
@@ -75,7 +76,7 @@ export default function CardPage({ config, embedded = false }: { config: CardPag
                                     <h3 className={`${embedded ? "text-lg" : "text-xl"} font-semibold text-primary`}>
                                         {item.link ? (
                                             <a
-                                                href={item.link}
+                                                href={withBasePath(item.link)}
                                                 target="_blank"
                                                 rel="noopener noreferrer"
                                                 className="hover:text-accent transition-colors"
@@ -95,7 +96,7 @@ export default function CardPage({ config, embedded = false }: { config: CardPag
                                 )}
                                 {item.content && (
                                     <div className={`${embedded ? "text-sm" : "text-base"} text-neutral-600 dark:text-neutral-500 leading-relaxed`}>
-                                        <ReactMarkdown components={markdownComponents}>
+                                        <ReactMarkdown components={markdownComponents} urlTransform={(url) => withBasePath(defaultUrlTransform(url))}>
                                             {item.content}
                                         </ReactMarkdown>
                                     </div>

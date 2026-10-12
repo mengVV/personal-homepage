@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import Link from 'next/link';
 import { Publication } from '@/types/publication';
 import { useMessages } from '@/lib/i18n/useMessages';
+import { withBasePath } from '@/lib/sitePath';
 import FormattedBibTeXText from '@/components/publications/FormattedBibTeXText';
 
 interface SelectedPublicationsProps {
@@ -66,9 +67,9 @@ export default function SelectedPublications({ publications, title, enableOnePag
                             </p>
                         )}
                         <div className="flex flex-wrap gap-4 mt-3 text-sm font-medium text-accent">
-                            {pub.url && <a href={pub.url} target="_blank" rel="noopener noreferrer" className="hover:underline underline-offset-4">{messages.publications.paper} ↗</a>}
-                            {pub.project && <a href={pub.project} target="_blank" rel="noopener noreferrer" className="hover:underline underline-offset-4">{messages.publications.project} ↗</a>}
-                            {pub.code && <a href={pub.code} target="_blank" rel="noopener noreferrer" className="hover:underline underline-offset-4">{messages.publications.code} ↗</a>}
+                            {pub.url && <a href={withBasePath(pub.url)} target="_blank" rel="noopener noreferrer" className="hover:underline underline-offset-4">{messages.publications.paper} ↗</a>}
+                            {pub.project && <a href={withBasePath(pub.project)} target="_blank" rel="noopener noreferrer" className="hover:underline underline-offset-4">{messages.publications.project} ↗</a>}
+                            {pub.code && <a href={withBasePath(pub.code)} target="_blank" rel="noopener noreferrer" className="hover:underline underline-offset-4">{messages.publications.code} ↗</a>}
                         </div>
                     </motion.div>
                 ))}

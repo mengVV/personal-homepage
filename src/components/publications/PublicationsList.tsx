@@ -15,6 +15,7 @@ import { Publication } from '@/types/publication';
 import { PublicationPageConfig } from '@/types/page';
 import { cn } from '@/lib/utils';
 import { useMessages } from '@/lib/i18n/useMessages';
+import { withBasePath } from '@/lib/sitePath';
 import FormattedBibTeXText from './FormattedBibTeXText';
 
 interface PublicationsListProps {
@@ -206,7 +207,7 @@ export default function PublicationsList({ config, publications, embedded = fals
                                     <div className="w-full md:w-48 flex-shrink-0">
                                         <div className="aspect-video md:aspect-[4/3] relative rounded-lg overflow-hidden bg-neutral-100 dark:bg-neutral-800">
                                             <Image
-                                                src={`/papers/${pub.preview}`}
+                                                src={withBasePath(`/papers/${pub.preview}`)}
                                                 alt={pub.title}
                                                 fill
                                                 className="object-cover"
@@ -244,12 +245,12 @@ export default function PublicationsList({ config, publications, embedded = fals
 
                                     <div className="flex flex-wrap gap-2 mt-auto">
                                         {pub.url && pub.url !== `https://doi.org/${pub.doi}` && (
-                                            <a href={pub.url} target="_blank" rel="noopener noreferrer" className="inline-flex items-center px-3 py-1 rounded-md text-xs font-medium bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300 hover:bg-accent hover:text-white transition-colors">
+                                            <a href={withBasePath(pub.url)} target="_blank" rel="noopener noreferrer" className="inline-flex items-center px-3 py-1 rounded-md text-xs font-medium bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300 hover:bg-accent hover:text-white transition-colors">
                                                 {messages.publications.paper}
                                             </a>
                                         )}
                                         {pub.project && (
-                                            <a href={pub.project} target="_blank" rel="noopener noreferrer" className="inline-flex items-center px-3 py-1 rounded-md text-xs font-medium bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300 hover:bg-accent hover:text-white transition-colors">
+                                            <a href={withBasePath(pub.project)} target="_blank" rel="noopener noreferrer" className="inline-flex items-center px-3 py-1 rounded-md text-xs font-medium bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300 hover:bg-accent hover:text-white transition-colors">
                                                 {messages.publications.project}
                                             </a>
                                         )}
@@ -265,7 +266,7 @@ export default function PublicationsList({ config, publications, embedded = fals
                                         )}
                                         {pub.code && (
                                             <a
-                                                href={pub.code}
+                                                href={withBasePath(pub.code)}
                                                 target="_blank"
                                                 rel="noopener noreferrer"
                                                 className="inline-flex items-center px-3 py-1 rounded-md text-xs font-medium bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300 hover:bg-accent hover:text-white transition-colors"

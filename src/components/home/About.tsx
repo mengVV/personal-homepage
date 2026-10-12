@@ -1,8 +1,9 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import ReactMarkdown from 'react-markdown';
+import ReactMarkdown, { defaultUrlTransform } from 'react-markdown';
 import { useMessages } from '@/lib/i18n/useMessages';
+import { withBasePath } from '@/lib/sitePath';
 
 interface AboutProps {
     content: string;
@@ -22,6 +23,7 @@ export default function About({ content, title }: AboutProps) {
             <h2 className="text-2xl font-serif font-bold text-primary mb-4">{resolvedTitle}</h2>
             <div className="text-neutral-700 dark:text-neutral-600 leading-relaxed">
                 <ReactMarkdown
+                    urlTransform={(url) => withBasePath(defaultUrlTransform(url))}
                     components={{
                         h1: ({ children }) => <h1 className="text-3xl font-serif font-bold text-primary mt-8 mb-4">{children}</h1>,
                         h2: ({ children }) => <h2 className="text-2xl font-serif font-bold text-primary mt-8 mb-4 border-b border-neutral-200 dark:border-neutral-800 pb-2">{children}</h2>,
@@ -33,8 +35,8 @@ export default function About({ content, title }: AboutProps) {
                         a: ({ ...props }) => (
                             <a
                                 {...props}
-                                target={props.href?.startsWith('http') ? '_blank' : undefined}
-                                rel={props.href?.startsWith('http') ? 'noopener noreferrer' : undefined}
+                                target={props.href && /^(https?:)?\/\//i.test(props.href) ? '_blank' : undefined}
+                                rel={props.href && /^(https?:)?\/\//i.test(props.href) ? 'noopener noreferrer' : undefined}
                                 className="text-accent font-medium transition-all duration-200 rounded hover:bg-accent/10 hover:shadow-sm"
                             />
                         ),

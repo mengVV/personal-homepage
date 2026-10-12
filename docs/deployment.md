@@ -1,141 +1,36 @@
-# Deployment Guide
+# Deployment and maintenance
 
-This guide is designed for beginners. You don't need complex configurations to deploy your website.
+The canonical website is [Meng Wu’s homepage](https://mengvv.github.io/personal-homepage/), built from the `main` branch of [mengVV/personal-homepage](https://github.com/mengVV/personal-homepage).
 
-## Option 1: GitHub Pages
+## Updating the website
 
-1.  **Build your project**
-    
-    First, ensure you have the correct Node.js version installed.
-    *   **Download & Install**: Go to [https://nodejs.org/en/download](https://nodejs.org/en/download) and install Node.js manually.
-    *   Better not to use the system's default Node.js as it might be outdated.
+Edit the matching files in `content/` (English) and `content_zh/` (Chinese), then commit to `main`. The **Deploy homepage to GitHub Pages** workflow builds and publishes the site automatically. Check [Actions](https://github.com/mengVV/personal-homepage/actions/workflows/deploy.yml) for a successful run before checking your changes online. No generated files need to be committed.
 
-    Open your terminal in the project folder and run:
-    
-    ```bash
-    npm install
-    npm run build
-    ```
-    This will create a folder named `out` in your project directory. This folder contains your generated website.
-    
-2.  **Create a GitHub Repository**
-    *   Log in to GitHub.
-    *   Create a new **Public** repository.
-    *   Name it `username.github.io` (replace `username` with your actual GitHub username).
+Profile, navigation, social links, and the avatar are in `config.toml`; the introduction is in `bio.md`; publications are in `publications.bib`; projects are in `research.toml`; CV and contact text are in their Markdown files. Images belong in `public/images/` or `public/papers/`. See the [README](../README.md) for field details.
 
-3.  **Upload Files**
-  
-    *   Upload **all the files inside the `out` folder** to your new repository.
-    *   You can do this by clicking "Upload files" on the GitHub repository page and dragging everything from the `out` folder.
-    *   *Alternatively, if you know Git, you can push the contents of `out` to the repository.*
-    
-4.  **Add .nojekyll file**
-  
-    *   In your GitHub repository, click "Add file" -> "Create new file".
-    *   Name the file `.nojekyll` (start with a dot, all lowercase).
-    *   Leave the content empty and click "Commit changes".
-    *   *This is important! It tells GitHub to allow folders starting with `_` (like `_next`).*
-    
-5.  **Configure Pages**
-    *   Go to your repository **Settings**.
-    *   Click on **Pages** in the left sidebar.
-    *   Under **Build and deployment**, ensure "Deploy from a branch" is selected.
-    *   Select your branch (usually `main`) and click **Save**.
+## Hosting configuration
 
-6.  **Done!**
-    Visit `https://username.github.io` to see your website.
+The repository is public. In **Settings → Pages → Build and deployment**, the source is **GitHub Actions**. `.github/workflows/deploy.yml` runs on pushes to `main` and supports a manual **Run workflow**. Pull requests run a separate build check without deploying.
 
-### (Optional) Deploy Automatically with GitHub Actions
+The deployment workflow installs the locked dependencies using Node.js 22, builds the static `out/` directory, and deploys the Pages artifact. It sets `NEXT_PUBLIC_BASE_PATH` from the Pages configuration so navigation, images, scripts, and favicons use the project path correctly. Keep this setting when changing deployment configuration. A failed build does not replace the last successfully deployed site.
 
-PRISM also supports **automatic deployment to GitHub Pages** using GitHub Actions.  
-This method is recommended if you want your site to update automatically whenever you push changes.
+## Local preview
 
-#### How to enable
+Use Node.js 22 or later:
 
-This repository includes an optional workflow located at:
-
-```
-.github/workflows/deploy.yml
+```sh
+npm ci
+npm run dev
 ```
 
-For template users, GitHub disables workflows by default.  
-To enable deployment:
+A normal `npm run build` exports a website for a root URL. To build for the current GitHub Pages project URL:
 
-1. Go to **Settings > Pages**, and under **Build and deployment > Source**, choose **GitHub Actions**.
-2. Go to **Actions** Tab, and select **"Deploy PRISM to GitHub Pages"**.
-3. Click **"Enable workflow"**.
-4. Run manually using **Run workflow**.
-5. (Optional) To enable automatic deployment on push:  
-   Edit `.github/workflows/deploy.yml` and uncomment:
-
-   ```yaml
-   on:
-     push:
-       branches:
-         - main
-         - ci
-   ```
-
-Once enabled, GitHub Actions will:
-
-- Build your site (`npm install && npm run build`)
-- Export static files into `out/`
-- Deploy automatically to GitHub Pages
-
-Your site will be available at `https://<username>.github.io`
-
-If you are using a repository other than `username.github.io`, your site will be at `https://<username>.github.io/<repository>/`.
-
-In this case, make sure to set the `basePath` and `assetPrefix` in `next.config.ts` accordingly to add path prefixes to your assets:
-
-```
-// next.config.ts
-import type { NextConfig } from "next";
-
-const nextConfig: NextConfig = {
-  output: 'export',
-  trailingSlash: true,
-
-  // Add these two lines
-  basePath: "/my-repo",
-  assetPrefix: "/my-repo",
-
-  images: {
-    unoptimized: true,
-  },
-  /* config options here */
-  webpack: (config) => {
-    config.module.rules.push({
-      test: /\.bib$/,
-      type: 'asset/source',
-    });
-    return config;
-  },
-};
-
-export default nextConfig;
+```sh
+NEXT_PUBLIC_BASE_PATH=/personal-homepage npm run build
 ```
 
+When previewing that export, serve `out/` at `/personal-homepage/`, matching the public URL. The path is fixed at build time.
 
+## Deployment troubleshooting
 
----
-
-## Option 2: Cloudflare Pages
-
-1.  **Build your project**
-    Run `npm run build` to generate the `out` folder.
-
-2.  **Create Application**
-    *   Log in to the [Cloudflare Dashboard](https://dash.cloudflare.com/).
-    *   Go to **Workers & Pages** -> **Create Application**.
-    *   Select the **Pages** tab.
-    *   Click **Drag and drop your files**.
-
-3.  **Upload**
-    *   Enter a **Project name** (this will be your subdomain, e.g., `my-site`).
-    *   Click **Create project**.
-    *   Drag and drop your `out` folder (or a zip archive of it) into the upload area.
-    *   Click **Deploy**.
-
-4.  **Done!**
-    You will see your site live at `https://<project-name>.pages.dev`.
+Open the failed run under **Actions** and read the failed step. Content syntax errors must be fixed before a new version can publish. To retry a successful commit, use **Run workflow** on `main`. Keep Pages set to **GitHub Actions** and keep the repository public for its current hosting setup.

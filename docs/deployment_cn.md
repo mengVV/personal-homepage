@@ -1,142 +1,44 @@
-# 部署指南
+# 发布与长期维护
 
-这份指南专为初学者准备。别担心，你不需要懂复杂的服务器配置，只需要跟着下面的步骤，就能轻松把你的个人主页发布上线！
+公开主页：[Meng Wu 个人主页](https://mengvv.github.io/personal-homepage/)。网站由 [mengVV/personal-homepage](https://github.com/mengVV/personal-homepage) 仓库的 `main` 分支自动发布。
 
-## 方案一：GitHub Pages
+## 更新内容
 
-1.  **构建你的项目**
+在 GitHub 打开 `content/`（英文）和 `content_zh/`（中文）中的对应文件，点击铅笔图标修改，然后提交到 `main`。**Deploy homepage to GitHub Pages** 会自动构建和发布。到 [Actions](https://github.com/mengVV/personal-homepage/actions/workflows/deploy.yml) 查看结果；绿色表示发布成功。无需上传或提交生成的网站文件。
 
-    首先，请确保你安装了正确的 Node.js 版本。
-    *   **下载与安装**：请前往 [https://nodejs.org/en/download](https://nodejs.org/en/download) 手动下载并安装。
-    *   最好不要使用系统自带的 Node.js 版本，以免出现兼容性问题。
+- `config.toml`：姓名、机构、头像、导航和社交链接。
+- `bio.md`、`about.toml`：简介、研究兴趣和首页精选论文。
+- `publications.bib`：论文和论文、项目、代码链接。
+- `research.toml`：研究项目。
+- `cv.md`、`contact.md`：简历和联系方式。
 
-    打开终端，进入项目文件夹，运行以下命令：
+图片放在 `public/images/` 或 `public/papers/`，并更新内容文件里的路径。字段说明见 [README](../README.md)。
 
-    ```bash
-    npm install
-    npm run build
-    ```
+## 发布配置
 
-    运行完成后，你会发现在项目目录下多了一个名为 `out` 的文件夹。这里面就是你网站的所有静态文件。
+仓库保持公开。**Settings → Pages → Build and deployment → Source** 已使用 **GitHub Actions**。
 
-2.  **创建一个 GitHub 仓库**
+`.github/workflows/deploy.yml` 在每次提交到 `main` 后运行，也可以从 Actions 点击 **Run workflow** 手动运行。拉取请求只做构建检查，合并到 `main` 后才发布。
 
-    *   登录 GitHub。
-    *   新建一个 **Public** (公开) 仓库。
-    *   **关键步骤**：仓库名必须填 `你的用户名.github.io` (请将 `你的用户名` 替换为你实际的 GitHub 账号名)。
+自动发布使用 Node.js 22 安装锁定版本的依赖，生成 `out/` 静态网站并上传到 Pages。工作流会自动读取 Pages 的站点路径，确保导航、图片、脚本和图标都能正确加载。发布失败时，现有网站继续提供上一次成功版本。
 
-3.  **上传文件**
+## 本地预览
 
-    *   将 `out` 文件夹里 **所有的内容** 上传到这个新仓库。
-    *   你可以在 GitHub 仓库页面点击 "Upload files"，然后把 `out` 文件夹里的所有文件全选拖进去。
-    *   *当然，如果你熟悉 Git 命令，也可以直接把 `out` 目录的内容 push 到仓库里。*
+使用 Node.js 22 或更新版本：
 
-4.  **添加 .nojekyll 文件（重要）**
-
-    *   在你的 GitHub 仓库页面，点击 "Add file" -> "Create new file"。
-    *   文件名填写 `.nojekyll` (注意前面有个点，且全小写)。
-    *   文件内容留空即可，直接点击 "Commit changes"。
-    *   *这一步非常重要！它告诉 GitHub 不要忽略以下划线开头的文件夹（比如 Next.js 生成的 `_next`），否则网站样式会加载失败。*
-
-5.  **配置 Pages**
-
-    *   进入仓库的 **Settings** (设置)。
-    *   在左侧栏找到 **Pages**。
-    *   在 **Build and deployment** 下，确保来源选择的是 "Deploy from a branch"。
-    *   选择你的分支（通常是 `main`），然后点击 **Save**。
-
-6.  **大功告成！**
-    访问 `https://你的用户名.github.io`，欣赏你的新网站吧！
-
-### (可选) 使用 GitHub Actions 自动部署
-
-PRISM 也支持使用 GitHub Actions **自动部署到 GitHub Pages**。
-如果您希望每次推送更改时自动更新站点，推荐使用此方法。
-
-#### 如何启用
-
-本仓库包含一个可选的工作流文件，位于：
-
-```
-.github/workflows/deploy.yml
+```sh
+npm ci
+npm run dev
 ```
 
-对于使用模板的用户，GitHub 默认会禁用工作流。
-要启用部署：
+普通的 `npm run build` 生成根路径网站。如需生成当前 GitHub Pages 地址对应的版本：
 
-1. 转到 **Settings (设置) > Pages**，在 **Build and deployment (构建和部署) > Source (来源)** 下，选择 **GitHub Actions**。
-2. 转到 **Actions** 标签页，选择 **"Deploy PRISM to GitHub Pages"**。
-3. 点击 **"Enable workflow" (启用工作流)**。
-4. 使用 **Run workflow (运行工作流)** 手动运行。
-5. (可选) 要启用推送时自动部署：
-   编辑 `.github/workflows/deploy.yml` 并取消注释：
-
-   ```yaml
-   on:
-     push:
-       branches:
-         - main
-         - ci
-   ```
-
-启用后，GitHub Actions 将会：
-
-- 构建您的站点 (`npm install && npm run build`)
-- 将静态文件导出到 `out/`
-- 自动部署到 GitHub Pages
-
-您的站点将可以通过 `https://<username>.github.io` 访问。
-
-如果您使用的仓库名称不是 `username.github.io`，您的站点将位于 `https://<username>.github.io/<repository>/`。
-
-在这种情况下，请确保在 `next.config.ts` 中相应地设置 `basePath` 和 `assetPrefix`，以便为您的资源添加路径前缀：
-
-```typescript
-// next.config.ts
-import type { NextConfig } from "next";
-
-const nextConfig: NextConfig = {
-  output: 'export',
-  trailingSlash: true,
-
-  // 添加这两行
-  basePath: "/my-repo",
-  assetPrefix: "/my-repo",
-
-  images: {
-    unoptimized: true,
-  },
-  /* config options here */
-  webpack: (config) => {
-    config.module.rules.push({
-      test: /\.bib$/,
-      type: 'asset/source',
-    });
-    return config;
-  },
-};
-
-export default nextConfig;
+```sh
+NEXT_PUBLIC_BASE_PATH=/personal-homepage npm run build
 ```
 
----
+预览该版本时，应把 `out/` 目录映射到 `/personal-homepage/`，与公开网址一致。站点路径在构建时确定。
 
-## 方案二：Cloudflare Pages
+## 发布失败时
 
-1.  **构建项目**
-    同样地，先运行 `npm run build`，生成 `out` 文件夹。
-
-2.  **创建应用**
-    *   登录 [Cloudflare 控制台 (Dashboard)](https://dash.cloudflare.com/)。
-    *   点击左侧的 **Workers & Pages** -> **Create Application**。
-    *   选择 **Pages** 标签页。
-    *   点击 **Drag and drop your files**。
-
-3.  **上传与发布**
-    *   输入 **Project name** (项目名称)，这将成为你域名的前缀（例如：`my-site`）。
-    *   点击 **Create project**。
-    *   将你的 `out` 文件夹（或者它的压缩包）直接拖入上传区域。
-    *   点击 **Deploy**。
-
-4.  **完成！**
-    你的网站已经在 `https://<你的项目名>.pages.dev` 上线啦！
+打开 Actions 中失败的运行记录，查看报错的步骤。修正内容语法并提交后会自动重试；也可以在 `main` 上点击 **Run workflow** 重新发布。保持 Pages 来源为 **GitHub Actions**，并保持仓库公开，以延续当前托管方式。

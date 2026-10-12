@@ -14,6 +14,7 @@ import { HeartIcon as HeartSolidIcon } from '@heroicons/react/24/solid';
 import { BookOpen, Github, Linkedin, Pin } from 'lucide-react';
 import type { SiteConfig } from '@/lib/config';
 import { useMessages } from '@/lib/i18n/useMessages';
+import { withBasePath } from '@/lib/sitePath';
 
 // Custom ORCID icon component
 const OrcidIcon = ({ className }: { className?: string }) => (
@@ -119,7 +120,7 @@ export default function Profile({ author, social, features, researchInterests }:
             {/* Profile Image */}
             <div className="w-64 h-64 mx-auto mb-6 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-200 hover:scale-105">
                 <Image
-                    src={author.avatar}
+                    src={withBasePath(author.avatar)}
                     alt={author.name}
                     width={256}
                     height={256}
@@ -206,7 +207,7 @@ export default function Profile({ author, social, features, researchInterests }:
                                                 <div className="mt-2 flex flex-col space-y-2 sm:flex-row sm:space-y-0 sm:space-x-2 justify-center">
                                                     {social.location_url && (
                                                         <a
-                                                            href={social.location_url}
+                                                            href={withBasePath(social.location_url)}
                                                             target="_blank"
                                                             rel="noopener noreferrer"
                                                             className="inline-flex items-center justify-center space-x-2 bg-accent hover:bg-accent-dark text-white px-3 py-1 rounded-md text-xs font-medium transition-colors duration-200 w-full sm:w-auto"
@@ -281,7 +282,7 @@ export default function Profile({ author, social, features, researchInterests }:
                                                 <p className="break-words">{social.email?.replace('@', ' (at) ')}</p>
                                                 <div className="mt-2">
                                                     <a
-                                                        href={link.href}
+                                                        href={withBasePath(link.href)}
                                                         className="inline-flex items-center justify-center space-x-2 bg-accent hover:bg-accent-dark text-white px-3 py-1 rounded-md text-xs font-medium transition-colors duration-200 w-full sm:w-auto"
                                                     >
                                                         <EnvelopeIcon className="h-4 w-4" />
@@ -300,7 +301,7 @@ export default function Profile({ author, social, features, researchInterests }:
                     return (
                         <a
                             key={link.name}
-                            href={link.href}
+                            href={withBasePath(link.href)}
                             target="_blank"
                             rel="noopener noreferrer"
                             className="p-2 sm:p-2 text-neutral-600 dark:text-neutral-400 hover:text-accent transition-colors duration-200"

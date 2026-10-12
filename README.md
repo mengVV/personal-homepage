@@ -2,9 +2,13 @@
 
 基于 [PRISM](https://github.com/xyjoey/PRISM) 的个人学术主页，保留模板的浅色学术排版、深色模式、论文搜索与筛选、BibTeX 引用以及中英文切换。
 
+公开主页：**[https://mengvv.github.io/personal-homepage/](https://mengvv.github.io/personal-homepage/)**
+
 ## 在 GitHub 修改内容
 
 内容集中在 `content/`（英文）和 `content_zh/`（中文），请同时更新对应文件。
+
+可以直接在 GitHub 打开文件，点击铅笔图标修改并提交到 `main`。每次提交会自动构建并发布；在仓库 [Actions](https://github.com/mengVV/personal-homepage/actions/workflows/deploy.yml) 中查看结果，绿色表示发布成功。内容更新无需手动上传构建文件。
 
 | 文件 | 内容 |
 | --- | --- |
@@ -35,7 +39,11 @@ npm run build
 python3 -m http.server 4173 --bind 127.0.0.1 --directory out
 ```
 
-部署目录为 `out/`。GitHub Actions 会在每次提交后执行完整构建检查。当前 [Sites 预览](https://personal-vcard-oct12.saltyrook512.chatgpt.site) 为私有，GitHub 提交不会自动更新该预览，需要另行部署。
+部署目录为 `out/`。GitHub Pages 工作流会自动取得站点路径并构建；本地默认使用根路径。若要生成 GitHub Pages 对应的版本，运行 `NEXT_PUBLIC_BASE_PATH=/personal-homepage npm run build`。
+
+## 自动发布
+
+仓库保持公开，**Settings → Pages → Source** 使用 **GitHub Actions**。`.github/workflows/deploy.yml` 在 `main` 提交或手动触发时部署；拉取请求只进行构建检查。发布失败时，现有网站继续提供上一次成功版本。详见[部署指南](docs/deployment_cn.md)。
 
 ## 许可
 
