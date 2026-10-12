@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="400" viewBox="0 0 640 400" role="img" aria-labelledby="title desc">
+  <title id="title">Balanced representation space</title>
+  <desc id="desc">Abstract balanced representation clusters in an orbital space; this is a concept illustration rather than measured data.</desc>
+  <defs>
+    <linearGradient id="bg" x2="1" y2="1"><stop stop-color="#282b30"/><stop offset="1" stop-color="#17191d"/></linearGradient>
+    <radialGradient id="halo"><stop stop-color="#e3b55e" stop-opacity=".1"/><stop offset="1" stop-color="#e3b55e" stop-opacity="0"/></radialGradient>
+  </defs>
+  <rect width="640" height="400" fill="url(#bg)"/>
+  <circle cx="320" cy="202" r="187" fill="url(#halo)"/>
+  <path d="M32 344H608M32 56H608" stroke="#ffffff" stroke-opacity=".05"/>
+  <text x="32" y="35" fill="#a4aab4" font-family="Arial,sans-serif" font-size="11" letter-spacing="2.4">BALANCED REPRESENTATIONS</text>
+  <g transform="translate(320 204)" fill="none">
+    <ellipse rx="188" ry="87" stroke="#777d86" stroke-opacity=".35" transform="rotate(-22)"/>
+    <ellipse rx="188" ry="87" stroke="#777d86" stroke-opacity=".35" transform="rotate(22)"/>
+    <ellipse rx="105" ry="125" stroke="#c9a45f" stroke-opacity=".38"/>
+    <ellipse rx="54" ry="125" stroke="#777d86" stroke-opacity=".25"/>
+    <path d="M-213 0H213M0-142V142" stroke="#777d86" stroke-opacity=".28" stroke-dasharray="3 5"/>
+    <circle r="47" fill="#22252b" stroke="#f1ca7e" stroke-opacity=".5"/>
+    <path d="M-19-10L0-22L19-10V12L0 23L-19 12ZM-19-10L0 1L19-10M0 1V23" stroke="#f1ca7e" stroke-width="1.5"/>
+    <path d="M-140-52L-44-15M140 52L44 15M-93 83L-31 35M93-83L31-35" stroke="#f1ca7e" stroke-opacity=".38"/>
+  </g>
+  <g fill="#f1ca7e" stroke="#f1ca7e" stroke-opacity=".25">
+    <circle cx="170" cy="148" r="19" fill-opacity=".07"/><circle cx="467" cy="262" r="19" fill-opacity=".07"/><circle cx="413" cy="117" r="19" fill-opacity=".07"/><circle cx="228" cy="288" r="19" fill-opacity=".07"/>
+    <circle cx="166" cy="145" r="4"/><circle cx="180" cy="154" r="3"/><circle cx="156" cy="157" r="3"/><circle cx="169" cy="160" r="2"/>
+    <circle cx="463" cy="258" r="4"/><circle cx="478" cy="267" r="3"/><circle cx="453" cy="270" r="3"/><circle cx="466" cy="273" r="2"/>
+    <circle cx="409" cy="113" r="4"/><circle cx="424" cy="122" r="3"/><circle cx="399" cy="125" r="3"/><circle cx="412" cy="128" r="2"/>
+    <circle cx="224" cy="284" r="4"/><circle cx="239" cy="293" r="3"/><circle cx="214" cy="296" r="3"/><circle cx="227" cy="299" r="2"/>
+  </g>
+  <g fill="#9199a6"><circle cx="133" cy="210" r="3"/><circle cx="509" cy="195" r="3"/><circle cx="348" cy="85" r="3"/><circle cx="288" cy="323" r="3"/></g>
+  <path d="M70 104H101V135M570 304H539V273" fill="none" stroke="#f1ca7e" stroke-opacity=".5"/>
+  <text x="32" y="375" fill="#6f747d" font-family="Arial,sans-serif" font-size="10" letter-spacing="1.6">CONCEPT STUDY</text>
+  <path d="M568 369H608" stroke="#f1ca7e" stroke-width="2"/>
+</svg>

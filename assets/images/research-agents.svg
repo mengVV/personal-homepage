@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="400" viewBox="0 0 640 400" role="img" aria-labelledby="title desc">
+  <title id="title">Latent communication between agents</title>
+  <desc id="desc">Four abstract agents exchange representations through a shared latent communication space.</desc>
+  <defs>
+    <linearGradient id="bg" x2="1" y2="1"><stop stop-color="#282b30"/><stop offset="1" stop-color="#17191d"/></linearGradient>
+    <radialGradient id="halo"><stop stop-color="#e3b55e" stop-opacity=".15"/><stop offset="1" stop-color="#e3b55e" stop-opacity="0"/></radialGradient>
+    <linearGradient id="core" x2="1" y2="1"><stop stop-color="#b48a43" stop-opacity=".25"/><stop offset="1" stop-color="#b48a43" stop-opacity=".03"/></linearGradient>
+  </defs>
+  <rect width="640" height="400" fill="url(#bg)"/>
+  <circle cx="320" cy="202" r="180" fill="url(#halo)"/>
+  <path d="M32 344H608M32 56H608" stroke="#ffffff" stroke-opacity=".05"/>
+  <text x="32" y="35" fill="#a4aab4" font-family="Arial,sans-serif" font-size="11" letter-spacing="2.4">MULTI-AGENT · LATENT COMMUNICATION</text>
+  <g fill="none" stroke="#f1ca7e" stroke-opacity=".4" stroke-width="1.3">
+    <path d="M155 140C220 140 222 192 269 192M485 140C420 140 418 192 371 192M155 277C220 277 222 223 269 223M485 277C420 277 418 223 371 223"/>
+    <path d="M155 145C196 100 236 88 290 131M485 145C444 100 404 88 350 131M155 272C196 317 236 329 290 286M485 272C444 317 404 329 350 286" stroke-opacity=".15" stroke-dasharray="4 6"/>
+  </g>
+  <g fill="#f1ca7e"><circle cx="220" cy="164" r="3"/><circle cx="420" cy="164" r="3"/><circle cx="225" cy="254" r="3"/><circle cx="415" cy="254" r="3"/></g>
+  <g fill="#23262c" stroke="#79818e" stroke-opacity=".5">
+    <rect x="69" y="99" width="86" height="81" rx="15"/><rect x="485" y="99" width="86" height="81" rx="15"/><rect x="69" y="237" width="86" height="81" rx="15"/><rect x="485" y="237" width="86" height="81" rx="15"/>
+  </g>
+  <g stroke="#d8bb80" fill="none" stroke-width="1.4">
+    <path d="M94 154V128L112 119L130 128V154Z M94 128L112 138L130 128M112 138V163"/>
+    <path d="M510 125H546V151H510Z M518 159H538M528 151V159"/><path d="M518 134H538M518 142H531" stroke-opacity=".55"/>
+    <circle cx="112" cy="274" r="18"/><path d="M94 274H130M112 256C100 268 100 280 112 292M112 256C124 268 124 280 112 292"/>
+    <path d="M510 270L528 259L546 270V290H510Z M517 284V273M528 284V269M539 284V275"/>
+  </g>
+  <circle cx="320" cy="208" r="91" fill="none" stroke="#8a7858" stroke-opacity=".2" stroke-dasharray="3 6"/>
+  <path d="M320 128L389 168V248L320 288L251 248V168Z" fill="url(#core)" stroke="#f1ca7e" stroke-opacity=".6"/>
+  <path d="M320 147L373 177V239L320 270L267 239V177Z" fill="#202329" stroke="#c7a561" stroke-opacity=".25"/>
+  <path d="M274 207C282 207 282 188 290 188S298 227 306 227S314 178 322 178S330 237 338 237S346 195 354 195S362 207 368 207" stroke="#f1ca7e" stroke-width="1.8" fill="none"/>
+  <path d="M278 207H362" stroke="#a8adb6" stroke-opacity=".25" stroke-dasharray="2 4"/>
+  <text x="292" y="255" fill="#c8ad78" font-family="Arial,sans-serif" font-size="10" letter-spacing="2">LATENT</text>
+  <text x="32" y="375" fill="#6f747d" font-family="Arial,sans-serif" font-size="10" letter-spacing="1.6">CONCEPT STUDY</text>
+  <path d="M568 369H608" stroke="#f1ca7e" stroke-width="2"/>
+</svg>

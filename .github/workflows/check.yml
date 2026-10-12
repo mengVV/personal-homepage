@@ -1,0 +1,23 @@
+name: Check website
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - name: Check scripts
+        run: |
+          node --check assets/js/profile.js
+          node --check assets/js/script.js
+          node --check scripts/prepare.mjs
+      - name: Prepare static website
+        run: node scripts/prepare.mjs

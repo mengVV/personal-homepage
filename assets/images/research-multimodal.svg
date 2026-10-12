@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="400" viewBox="0 0 640 400" role="img" aria-labelledby="title desc">
+  <title id="title">Multimodal image generation</title>
+  <desc id="desc">An abstract text prompt leads to a generated landscape whose central image expands into an outpainted canvas.</desc>
+  <defs>
+    <linearGradient id="bg" x2="1" y2="1"><stop stop-color="#282b30"/><stop offset="1" stop-color="#17191d"/></linearGradient>
+    <linearGradient id="sky" x2="0" y2="1"><stop stop-color="#454a54"/><stop offset="1" stop-color="#242931"/></linearGradient>
+    <clipPath id="canvas"><rect x="236" y="96" width="360" height="229" rx="13"/></clipPath>
+  </defs>
+  <rect width="640" height="400" fill="url(#bg)"/>
+  <path d="M32 344H608M32 56H608" stroke="#ffffff" stroke-opacity=".05"/>
+  <text x="32" y="35" fill="#a4aab4" font-family="Arial,sans-serif" font-size="11" letter-spacing="2.4">TEXT TO IMAGE · OUTPAINTING</text>
+  <rect x="44" y="143" width="145" height="125" rx="13" fill="#22252b" stroke="#727780" stroke-opacity=".6"/>
+  <path d="M66 171H96M66 188H163M66 202H151M66 216H157M66 230H126" stroke="#c5b38f" stroke-opacity=".7" stroke-width="3" stroke-linecap="round"/>
+  <path d="M91 171V162M81 171V162" stroke="#f1ca7e" stroke-width="1.5"/>
+  <path d="M189 206H222M215 200L222 206L215 212" fill="none" stroke="#f1ca7e" stroke-width="1.5"/>
+  <rect x="236" y="96" width="360" height="229" rx="13" fill="url(#sky)" stroke="#727780" stroke-opacity=".6"/>
+  <g clip-path="url(#canvas)">
+    <g stroke="#7b838e" stroke-opacity=".14"><path d="M266 96V325M296 96V325M326 96V325M356 96V325M386 96V325M416 96V325M446 96V325M476 96V325M506 96V325M536 96V325M566 96V325M236 126H596M236 156H596M236 186H596M236 216H596M236 246H596M236 276H596M236 306H596"/></g>
+    <circle cx="463" cy="153" r="23" fill="#f1ca7e" fill-opacity=".9"/>
+    <path d="M226 270L300 191L365 245L425 178L509 264L558 218L610 267V340H226Z" fill="#6c7076"/>
+    <path d="M226 286L300 236L348 273L411 221L477 285L544 250L610 289V340H226Z" fill="#353d47"/>
+    <path d="M226 312L312 277L386 299L456 269L512 303L610 289V340H226Z" fill="#242b34"/>
+    <path d="M425 178L440 195L425 190L412 194Z" fill="#eee3ce" fill-opacity=".55"/>
+    <path d="M236 96H596V325H236ZM316 130H516V291H316Z" fill="#17191d" fill-opacity=".46" fill-rule="evenodd"/>
+  </g>
+  <rect x="316" y="130" width="200" height="161" rx="2" fill="none" stroke="#f1ca7e" stroke-width="1.3" stroke-dasharray="5 5"/>
+  <g stroke="#f1ca7e" stroke-width="1.3" fill="none">
+    <path d="M288 212H258M265 205L258 212L265 219"/><path d="M544 212H574M567 205L574 212L567 219"/><path d="M416 119V104M410 110L416 104L422 110"/><path d="M416 303V319M410 313L416 319L422 313"/>
+  </g>
+  <text x="69" y="294" fill="#90969f" font-family="Arial,sans-serif" font-size="10" letter-spacing="2">PROMPT</text>
+  <text x="32" y="375" fill="#6f747d" font-family="Arial,sans-serif" font-size="10" letter-spacing="1.6">CONCEPT STUDY</text>
+  <path d="M568 369H608" stroke="#f1ca7e" stroke-width="2"/>
+</svg>

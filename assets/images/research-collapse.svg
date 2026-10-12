@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="400" viewBox="0 0 640 400" role="img" aria-labelledby="title desc">
+  <title id="title">Generation and memory</title>
+  <desc id="desc">Concept illustration of diverse generated representations flowing into a structured memory.</desc>
+  <defs>
+    <linearGradient id="bg" x2="1" y2="1"><stop stop-color="#282b30"/><stop offset="1" stop-color="#17191d"/></linearGradient>
+    <radialGradient id="halo"><stop stop-color="#e3b55e" stop-opacity=".12"/><stop offset="1" stop-color="#e3b55e" stop-opacity="0"/></radialGradient>
+    <linearGradient id="stream"><stop stop-color="#f1ca7e" stop-opacity=".12"/><stop offset=".65" stop-color="#f1ca7e" stop-opacity=".75"/><stop offset="1" stop-color="#f1ca7e" stop-opacity=".25"/></linearGradient>
+  </defs>
+  <rect width="640" height="400" fill="url(#bg)"/>
+  <circle cx="400" cy="214" r="210" fill="url(#halo)"/>
+  <path d="M32 344H608M32 56H608" stroke="#ffffff" stroke-opacity=".05"/>
+  <text x="32" y="35" fill="#a4aab4" font-family="Arial,sans-serif" font-size="11" letter-spacing="2.4">GENERATION · MEMORY</text>
+  <g fill="none" stroke="#61656d" stroke-opacity=".38">
+    <ellipse cx="150" cy="205" rx="95" ry="115" transform="rotate(-28 150 205)"/>
+    <ellipse cx="150" cy="205" rx="70" ry="92" transform="rotate(32 150 205)"/>
+    <ellipse cx="150" cy="205" rx="111" ry="63" transform="rotate(-12 150 205)"/>
+  </g>
+  <g fill="#f1ca7e">
+    <circle cx="78" cy="186" r="3.5"/><circle cx="105" cy="120" r="4"/><circle cx="134" cy="170" r="4.5"/><circle cx="178" cy="128" r="3"/><circle cx="218" cy="206" r="4"/><circle cx="161" cy="233" r="4"/><circle cx="89" cy="250" r="3"/><circle cx="185" cy="285" r="3.5"/><circle cx="129" cy="285" r="4"/><circle cx="205" cy="160" r="3"/><circle cx="151" cy="110" r="2"/><circle cx="71" cy="219" r="2.5"/>
+  </g>
+  <g fill="#90969f"><circle cx="112" cy="205" r="3"/><circle cx="170" cy="191" r="3"/><circle cx="144" cy="254" r="2.5"/><circle cx="232" cy="245" r="2.5"/><circle cx="112" cy="149" r="2"/><circle cx="151" cy="304" r="2"/></g>
+  <g fill="none" stroke="url(#stream)" stroke-width="1.5">
+    <path d="M186 128C285 112 296 184 409 181"/><path d="M218 206C295 204 319 204 409 205"/><path d="M185 285C289 292 314 229 409 229"/><path d="M205 160C283 158 322 198 409 197"/><path d="M161 233C284 255 302 217 409 217"/>
+  </g>
+  <path d="M302 128V280" stroke="#f1ca7e" stroke-opacity=".23" stroke-dasharray="3 6"/>
+  <path d="M294 203L306 211L294 219" fill="none" stroke="#f1ca7e" stroke-width="1.5"/>
+  <rect x="409" y="119" width="175" height="178" rx="18" fill="#1c1e23" stroke="#cda456" stroke-opacity=".55"/>
+  <rect x="423" y="133" width="147" height="150" rx="10" fill="#ffffff" fill-opacity=".015" stroke="#ffffff" stroke-opacity=".05"/>
+  <g fill="#f1ca7e" fill-opacity=".12" stroke="#f1ca7e" stroke-opacity=".6">
+    <rect x="438" y="154" width="28" height="28" rx="5"/><rect x="483" y="154" width="28" height="28" rx="5"/><rect x="528" y="154" width="28" height="28" rx="5"/>
+    <rect x="438" y="195" width="28" height="28" rx="5"/><rect x="483" y="195" width="28" height="28" rx="5"/><rect x="528" y="195" width="28" height="28" rx="5"/>
+    <rect x="438" y="236" width="28" height="28" rx="5"/><rect x="483" y="236" width="28" height="28" rx="5"/><rect x="528" y="236" width="28" height="28" rx="5"/>
+  </g>
+  <g fill="#f1ca7e"><circle cx="452" cy="168" r="3"/><circle cx="497" cy="209" r="3"/><circle cx="542" cy="250" r="3"/></g>
+  <text x="73" y="327" fill="#90969f" font-family="Arial,sans-serif" font-size="10" letter-spacing="2">DISTRIBUTION</text>
+  <text x="462" y="327" fill="#c8ad78" font-family="Arial,sans-serif" font-size="10" letter-spacing="2">MEMORY</text>
+  <text x="32" y="375" fill="#6f747d" font-family="Arial,sans-serif" font-size="10" letter-spacing="1.6">CONCEPT STUDY</text>
+  <path d="M568 369H608" stroke="#f1ca7e" stroke-width="2"/>
+</svg>
