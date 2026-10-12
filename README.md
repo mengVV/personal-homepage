@@ -21,7 +21,7 @@
 
 论文字段 `selected={true}` 用于首页精选；`preview` 指向 `public/papers/` 中的封面文件名；`url` 是论文链接，`project` 是项目主页，`code` 是代码仓库。PRISM 作者字段里的 `#` 表示共同贡献，`*` 表示通讯作者，请只按已确认信息填写。当前两篇预印本未标注未经确认的会议录用状态。
 
-头像为 `public/images/monogram.svg`，可替换成自己的照片并更新 `content/config.toml`。研究封面是概念示意，并非论文实验图。网站固定使用英文，已移除语言切换入口。
+头像为 `public/images/avatar.jpg`，可替换成自己的照片并更新 `content/config.toml` 中的头像路径。研究封面是概念示意，并非论文实验图。网站固定使用英文，已移除语言切换入口。
 
 ## 本地预览与构建
 
