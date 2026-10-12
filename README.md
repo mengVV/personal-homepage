@@ -1,12 +1,12 @@
 # Meng Wu · Academic Homepage
 
-基于 [PRISM](https://github.com/xyjoey/PRISM) 的个人学术主页，保留模板的浅色学术排版、深色模式、论文搜索与筛选、BibTeX 引用以及中英文切换。
+基于 [PRISM](https://github.com/xyjoey/PRISM) 的英文个人学术主页，保留模板的浅色学术排版、深色模式、论文搜索与筛选及 BibTeX 引用。
 
 公开主页：**[https://mengvv.github.io/personal-homepage/](https://mengvv.github.io/personal-homepage/)**
 
 ## 在 GitHub 修改内容
 
-内容集中在 `content/`（英文）和 `content_zh/`（中文），请同时更新对应文件。
+英文内容集中在 `content/`，只需维护这一份。
 
 可以直接在 GitHub 打开文件，点击铅笔图标修改并提交到 `main`。每次提交会自动构建并发布；在仓库 [Actions](https://github.com/mengVV/personal-homepage/actions/workflows/deploy.yml) 中查看结果，绿色表示发布成功。内容更新无需手动上传构建文件。
 
@@ -21,7 +21,7 @@
 
 论文字段 `selected={true}` 用于首页精选；`preview` 指向 `public/papers/` 中的封面文件名；`url` 是论文链接，`project` 是项目主页，`code` 是代码仓库。PRISM 作者字段里的 `#` 表示共同贡献，`*` 表示通讯作者，请只按已确认信息填写。当前两篇预印本未标注未经确认的会议录用状态。
 
-头像为 `public/images/monogram.svg`，可替换成自己的照片并更新两份 `config.toml`。研究封面是概念示意，并非论文实验图。默认中文，语言切换会保存访客偏好。
+头像为 `public/images/monogram.svg`，可替换成自己的照片并更新 `content/config.toml`。研究封面是概念示意，并非论文实验图。网站固定使用英文，已移除语言切换入口。
 
 ## 本地预览与构建
 

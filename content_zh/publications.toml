@@ -1,4 +1,0 @@
-type = "publication"
-title = "论文"
-description = "扩散模型、合成数据、视觉学习、多模态生成与智能体通信相关研究。带下划线的作者表示共同贡献。"
-source = "publications.bib"

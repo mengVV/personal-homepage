@@ -4,7 +4,7 @@
 
 ## 更新内容
 
-在 GitHub 打开 `content/`（英文）和 `content_zh/`（中文）中的对应文件，点击铅笔图标修改，然后提交到 `main`。**Deploy homepage to GitHub Pages** 会自动构建和发布。到 [Actions](https://github.com/mengVV/personal-homepage/actions/workflows/deploy.yml) 查看结果；绿色表示发布成功。无需上传或提交生成的网站文件。
+网站只保留英文版。在 GitHub 打开 `content/` 中的对应文件，点击铅笔图标修改，然后提交到 `main`。**Deploy homepage to GitHub Pages** 会自动构建和发布。到 [Actions](https://github.com/mengVV/personal-homepage/actions/workflows/deploy.yml) 查看结果；绿色表示发布成功。无需上传或提交生成的网站文件。
 
 - `config.toml`：姓名、机构、头像、导航和社交链接。
 - `bio.md`、`about.toml`：简介、研究兴趣和首页精选论文。

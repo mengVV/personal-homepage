@@ -4,7 +4,7 @@ The canonical website is [Meng Wu’s homepage](https://mengvv.github.io/persona
 
 ## Updating the website
 
-Edit the matching files in `content/` (English) and `content_zh/` (Chinese), then commit to `main`. The **Deploy homepage to GitHub Pages** workflow builds and publishes the site automatically. Check [Actions](https://github.com/mengVV/personal-homepage/actions/workflows/deploy.yml) for a successful run before checking your changes online. No generated files need to be committed.
+Edit the English files in `content/`, then commit to `main`. The **Deploy homepage to GitHub Pages** workflow builds and publishes the site automatically. Check [Actions](https://github.com/mengVV/personal-homepage/actions/workflows/deploy.yml) for a successful run before checking your changes online. No generated files need to be committed. The website uses English only and has no language switcher.
 
 Profile, navigation, social links, and the avatar are in `config.toml`; the introduction is in `bio.md`; publications are in `publications.bib`; projects are in `research.toml`; CV and contact text are in their Markdown files. Images belong in `public/images/` or `public/papers/`. See the [README](../README.md) for field details.
 
