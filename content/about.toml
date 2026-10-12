@@ -2,7 +2,7 @@ type = "about"
 title = "About"
 
 [profile]
-research_interests = ["Diffusion & Generalization","Synthetic Data & Vision","Multimodal Generation","Latent Communication"]
+research_interests = ["Diffusion & Generalization","Synthetic Data","Multi-Agent Collaboration"]
 
 [[sections]]
 id = "about"
