@@ -1,6 +1,6 @@
-I am a Ph.D. student at the University of Michigan, Ann Arbor, advised by [Prof. Qing Qu](https://qingqu.engin.umich.edu/). I previously studied Electrical and Computer Engineering at Michigan and received my B.E. in Electronic Information Engineering from the University of Electronic Science and Technology of China.
+I am a Ph.D. student at the University of Michigan, Ann Arbor, advised by [Prof. Qing Qu](https://qingqu.engin.umich.edu/). I received my B.E. from the University of Electronic Science and Technology of China.
 
-My research explores how generative models learn, generalize, and use data, with a focus on memorization and model collapse in diffusion models, synthetic data, and visual domain adaptation. I also study multimodal generation and latent communication between heterogeneous agents to help models understand and share information more effectively.
+My research explores how generative models learn, generalize, memorize data. I am also interested in multi-agent latent.
 
 Explore my [research projects](/research), [publications](/publications), and [CV](/cv).
 
