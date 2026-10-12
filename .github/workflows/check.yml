@@ -10,14 +10,13 @@ permissions:
   contents: read
 
 jobs:
-  check:
+  build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
-      - name: Check scripts
-        run: |
-          node --check assets/js/profile.js
-          node --check assets/js/script.js
-          node --check scripts/prepare.mjs
-      - name: Prepare static website
-        run: node scripts/prepare.mjs
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'npm'
+      - run: npm ci
+      - run: npm run build

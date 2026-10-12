@@ -1,0 +1,38 @@
+type = "card"
+title = "Research"
+description = "Exploring data use, representations, and generalization in generative models, with applications to visual learning and agent collaboration."
+
+[[items]]
+title = "Understanding Model Collapse"
+subtitle = "NeurIPS 2025 · Spotlight · Equal contribution"
+content = "Explaining collapse as a transition from generalization to memorization, and studying entropy-based data selection for recursive training.\n\n[Paper](https://arxiv.org/abs/2509.16499) · [Project](https://shilianghe007.github.io/model-collapse/index.html) · [Code](https://github.com/shilianghe007/Model_Collapse)"
+tags = ["Diffusion models","Generalization & memorization"]
+image = "/images/research-collapse.svg"
+
+[[items]]
+title = "Representations & Generalization"
+subtitle = "ICLR 2026 · Poster"
+content = "Connecting balanced and spiky representations to generalization and memorization, with applications to detection and image editing.\n\n[Paper](https://arxiv.org/abs/2512.20963) · [Project](https://la0ka1.github.io/diffusion-gen-from-rep/) · [Code](https://github.com/la0ka1/diffusion-gen-from-rep)"
+tags = ["Diffusion models","Generalization & memorization"]
+image = "/images/research-representation.svg"
+
+[[items]]
+title = "Sim2Real for UAV Detection"
+subtitle = "CFHA · Preprint"
+content = "Bridging synthetic and real UAV imagery through global style transfer, local refinement, and hallucination removal.\n\n[Paper](https://arxiv.org/abs/2512.13869) · [Code](https://github.com/liwd190019/CFHA)"
+tags = ["Synthetic data","Visual learning"]
+image = "/images/research-uav.svg"
+
+[[items]]
+title = "Multimodal Image Outpainting"
+subtitle = "VIP · ACCV 2024"
+content = "Combining multimodal descriptions and diffusion generation to customize the content beyond an image’s boundaries.\n\n[Paper](https://openaccess.thecvf.com/content/ACCV2024/html/Yang_VIP_Versatile_Image_Outpainting_Empowered_by_Multimodal_Large_Language_Model_ACCV_2024_paper.html) · [Code](https://github.com/ucasyjz/VIP)"
+tags = ["Multimodal generation","Image outpainting"]
+image = "/images/research-multimodal.svg"
+
+[[items]]
+title = "Latent Communication Across Agents"
+subtitle = "See What I See · 2026 Preprint"
+content = "Studying dense KV-cache alignment to transfer context and reasoning across different language models.\n\n[Paper](https://arxiv.org/abs/2606.13594) · [Project](https://chicychen.github.io/dense-hetero-latent-mas/)"
+tags = ["Heterogeneous agents","Latent communication"]
+image = "/images/research-agents.svg"

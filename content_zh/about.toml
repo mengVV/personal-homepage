@@ -1,0 +1,18 @@
+type = "about"
+title = "关于我"
+
+[profile]
+research_interests = ["扩散模型与泛化","合成数据与视觉学习","多模态生成","智能体潜在通信"]
+
+[[sections]]
+id = "about"
+type = "markdown"
+source = "bio.md"
+title = "关于我"
+
+[[sections]]
+id = "featured_publications"
+type = "publications"
+title = "精选论文"
+filter = "selected"
+limit = 2

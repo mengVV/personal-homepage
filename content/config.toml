@@ -1,0 +1,69 @@
+[site]
+title = "Meng Wu"
+description = "Academic website of Meng Wu, a Ph.D. student at the University of Michigan researching diffusion models, synthetic data, visual learning, and latent agent communication."
+favicon = "/favicon.svg"
+last_updated = "October 12, 2026"
+
+[author]
+name = "Meng Wu"
+title = "Ph.D. Student"
+institution = "University of Michigan"
+avatar = "/images/monogram.svg"
+
+[social]
+email = "wymond@umich.edu"
+location = "Ann Arbor, MI, USA"
+location_url = "https://www.google.com/maps/search/?api=1&query=Ann+Arbor+Michigan"
+google_scholar = "https://scholar.google.com/citations?user=kUqmflsAAAAJ"
+orcid = "https://orcid.org/0009-0005-8917-3649"
+github = "https://github.com/mengVV"
+openreview = "https://openreview.net/profile?id=~Meng_Wu3"
+linkedin = "https://linkedin.com/in/meng-wu"
+location_details = ["University of Michigan","Ann Arbor, Michigan, USA"]
+
+[features]
+enable_likes = false
+enable_one_page_mode = false
+
+[i18n]
+enabled = true
+locales = ["zh", "en"]
+default_locale = "zh"
+mode = "fixed"
+fixed_locale = "zh"
+persist = true
+switcher = true
+
+[i18n.labels]
+zh = "中文"
+en = "English"
+
+[[navigation]]
+title = "About"
+type = "page"
+target = "about"
+href = "/"
+
+[[navigation]]
+title = "Publications"
+type = "page"
+target = "publications"
+href = "/publications"
+
+[[navigation]]
+title = "Research"
+type = "page"
+target = "research"
+href = "/research"
+
+[[navigation]]
+title = "CV"
+type = "page"
+target = "cv"
+href = "/cv"
+
+[[navigation]]
+title = "Contact"
+type = "page"
+target = "contact"
+href = "/contact"

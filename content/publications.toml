@@ -1,0 +1,4 @@
+type = "publication"
+title = "Publications"
+description = "Research on diffusion models, synthetic data, visual learning, multimodal generation, and agent communication. Underlined authors contributed equally."
+source = "publications.bib"
